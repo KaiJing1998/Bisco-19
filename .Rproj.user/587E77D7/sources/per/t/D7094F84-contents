@@ -57,6 +57,111 @@ dbListFields(mydb,'JOHOR_DISTRICT')
 rs7 = dbSendQuery(mydb, "SELECT * FROM JOHOR_DISTRICT")
 johor_district = fetch (rs7, n= -1)
 
+dbListFields(mydb,'JOHOR')
+rs8 = dbSendQuery(mydb, "SELECT * FROM JOHOR")
+johor= fetch (rs8, n= -1)
+
+dbListFields(mydb,'PERLIS_DISTRICT')
+rs9 = dbSendQuery(mydb, "SELECT * FROM PERLIS_DISTRICT")
+perlis_district = fetch (rs9, n= -1)
+
+dbListFields(mydb,'PERLIS')
+rs10 = dbSendQuery(mydb, "SELECT * FROM PERLIS")
+perlis = fetch (rs10, n= -1)
+
+dbListFields(mydb,'PPINANG_DISTRICT')
+rs11 = dbSendQuery(mydb, "SELECT * FROM PPINANG_DISTRICT")
+penang_district = fetch (rs11, n= -1)
+
+dbListFields(mydb,'PPINANG')
+rs12 = dbSendQuery(mydb, "SELECT * FROM PPINANG")
+penang = fetch (rs12, n= -1)
+
+dbListFields(mydb,'KEDAH_DISTRICT')
+rs13 = dbSendQuery(mydb, "SELECT * FROM KEDAH_DISTRICT")
+kedah_district = fetch (rs13, n= -1)
+
+dbListFields(mydb,'KEDAH')
+rs14 = dbSendQuery(mydb, "SELECT * FROM KEDAH")
+kedah = fetch (rs14, n= -1)
+
+dbListFields(mydb,'KELANTAN_DISTRICT')
+rs15 = dbSendQuery(mydb, "SELECT * FROM KELANTAN_DISTRICT")
+kelantan_district = fetch (rs15, n= -1)
+
+dbListFields(mydb,'KELANTAN')
+rs16 = dbSendQuery(mydb, "SELECT * FROM KELANTAN")
+kelantan = fetch (rs16, n= -1)
+
+dbListFields(mydb,'TERENGGANU_DISTRICT')
+rs17 = dbSendQuery(mydb, "SELECT * FROM TERENGGANU_DISTRICT")
+terengganu_district = fetch (rs17, n= -1)
+
+dbListFields(mydb,'TERENGGANU')
+rs18 = dbSendQuery(mydb, "SELECT * FROM TERENGGANU")
+terengganu= fetch (rs18, n= -1)
+
+dbListFields(mydb,'MELAKA_DISTRICT')
+rs19 = dbSendQuery(mydb, "SELECT * FROM MELAKA_DISTRICT")
+melaka_district = fetch (rs19, n= -1)
+
+dbListFields(mydb,'MELAKA')
+rs20 = dbSendQuery(mydb, "SELECT * FROM MELAKA")
+melaka = fetch (rs20, n= -1)
+
+dbListFields(mydb,'PAHANG_DISTRICT')
+rs21 = dbSendQuery(mydb, "SELECT * FROM PAHANG_DISTRICT")
+pahang_district = fetch (rs21, n= -1)
+
+dbListFields(mydb,'PAHANG')
+rs22 = dbSendQuery(mydb, "SELECT * FROM PAHANG")
+pahang = fetch (rs22, n= -1)
+
+dbListFields(mydb,'LABUAN_DISTRICT')
+rs23 = dbSendQuery(mydb, "SELECT * FROM LABUAN_DISTRICT")
+labuan_district = fetch (rs23, n= -1)
+
+dbListFields(mydb,'LABUAN')
+rs24 = dbSendQuery(mydb, "SELECT * FROM LABUAN")
+labuan = fetch (rs24, n= -1)
+
+dbListFields(mydb,'PUTRAJAYA_DISTRICT')
+rs25 = dbSendQuery(mydb, "SELECT * FROM PUTRAJAYA_DISTRICT")
+putrajaya_district = fetch (rs25, n= -1)
+
+dbListFields(mydb,'PUTRAJAYA')
+rs26 = dbSendQuery(mydb, "SELECT * FROM PUTRAJAYA")
+putrajaya = fetch (rs26, n= -1)
+
+dbListFields(mydb,'NSEMBILAN_DISTRICT')
+rs27 = dbSendQuery(mydb, "SELECT * FROM NSEMBILAN_DISTRICT")
+nsembilan_district = fetch (rs27, n= -1)
+
+dbListFields(mydb,'NSEMBILAN')
+rs28 = dbSendQuery(mydb, "SELECT * FROM NSEMBILAN")
+nsembilan = fetch (rs28, n= -1)
+
+dbListFields(mydb,'SABAH_DISTRICT')
+rs29 = dbSendQuery(mydb, "SELECT * FROM SABAH_DISTRICT")
+sabah_district = fetch (rs29, n= -1)
+
+dbListFields(mydb,'SABAH')
+rs30 = dbSendQuery(mydb, "SELECT * FROM SABAH")
+sabah = fetch (rs30, n= -1)
+
+dbListFields(mydb,'SARAWAK_DISTRICT')
+rs31 = dbSendQuery(mydb, "SELECT * FROM SARAWAK_DISTRICT")
+sarawak_district = fetch (rs31, n= -1)
+
+dbListFields(mydb,'SARAWAK')
+rs32 = dbSendQuery(mydb, "SELECT * FROM SARAWAK")
+sarawak = fetch (rs32, n= -1)
+
+
+
+
+
+
 #View(state_cases_table)
 #View(datatable)
 #View(daily_state_cases_table)
@@ -64,6 +169,32 @@ johor_district = fetch (rs7, n= -1)
 #View(selangor)
 #View(kualalumpur_district)
 #View(kualalumpur)
+#View(johor_district)
+#View(johor)
+#View(perlis_district)
+#View(perlis)
+#View(pinang_district)
+#View(pinang)
+#View(kedah_district)
+#View(kedah)
+#View(kelantan_district)
+#View(kelantan)
+#View(terengganu_district)
+#View(terengganu)
+#View(melaka_district)
+#View(melaka)
+#View(pahang_district)
+#View(pahang)
+#View(labuan_district)
+#View(labuan)
+#View(putrajaya_district)
+#View(putrajaya)
+#View(nsembilan_district)
+#View(nsembilan)
+#View(sabah_district)
+#View(sabah)
+#View(sarawak_district)
+#View(sarawak)
 
 
 ui <- dashboardPage(
@@ -91,7 +222,7 @@ ui <- dashboardPage(
         menuSubItem("Pahang",tabName = "pahang"),
         menuSubItem("Labuan",tabName = "labuan"),
         menuSubItem("Putrajaya",tabName = "putrajaya"),
-        menuSubItem("Negeri Sembilan",tabName = "negeri sembilan"),
+        menuSubItem("Negeri Sembilan",tabName = "negerisembilan"),
         menuSubItem("Sabah",tabName = "sabah"),
         menuSubItem("Sarawak",tabName = "Sarawak"),
       menuItem("Symptoms of Covid-19", tabName = "symptoms", icon = icon("hand-holding-medical"))
@@ -100,10 +231,10 @@ ui <- dashboardPage(
   dashboardBody(
     fluidRow(
       # A static value Box
-      valueBox("1,349","New Cases", color = "red", width = 3, icon = icon("arrow-alt-circle-up")),
-      valueBox("2","New Deaths", color = "green",width = 3, icon = icon("arrow-alt-circle-up")),
-      valueBox("1,270","New Recovered", color = "blue",width = 3, icon = icon("arrow-alt-circle-up")),
-      valueBox("14,509","Active Cases", color = "maroon", width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("1,070","New Cases", color = "red", width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("7","New Deaths", color = "green",width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("1,294","New Recovered", color = "blue",width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("14,278","Active Cases", color = "maroon", width = 3, icon = icon("arrow-alt-circle-up")),
     ),
     
     tabItems(
@@ -148,7 +279,7 @@ ui <- dashboardPage(
               fluidPage(
                 h2("State in Malaysia"),
                   "updated",
-                  em("April 4, 2021"),
+                  em("April 5, 2021"),
                 dataTableOutput("state_cases")
               )
       ),
@@ -157,7 +288,7 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Kuala Lumpur"),
                 "updated",
-                em("April 4, 2021"),
+                em("April 5, 2021"),
                 plotlyOutput("kualaLumpurDistrict"),
                 dataTableOutput("kualaLumpur")
               ),
@@ -167,7 +298,7 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Selangor"),
                    "updated",
-                   em("April 4, 2021"),
+                   em("April 5, 2021"),
                   plotlyOutput("selangorDistrict"),
                   dataTableOutput("selangor")
               ),
@@ -177,12 +308,132 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Johor"),
                 "updated",
-                em("April 4, 2021"),
+                em("April 5, 2021"),
                 plotlyOutput("johorDistrict"),
                 dataTableOutput("johor")
               ),
       ),
       
+      tabItem("perlis",
+              fluidPage(
+                h2("Perlis"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("perlisDistrict"),
+                dataTableOutput("perlis")
+              ),
+      ),
+      
+      tabItem("penang",
+              fluidPage(
+                h2("Penang"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("penangDistrict"),
+                dataTableOutput("penang")
+              ),
+      ),
+      
+      tabItem("kedah",
+              fluidPage(
+                h2("Kedah"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("kedahDistrict"),
+                dataTableOutput("kedah")
+              ),
+      ),
+      
+      tabItem("kelantan",
+              fluidPage(
+                h2("Kelantan"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("kelantanDistrict"),
+                dataTableOutput("kelantan")
+              ),
+      ),
+      
+      tabItem("terengganu",
+              fluidPage(
+                h2("Terengganu"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("terengganuDistrict"),
+                dataTableOutput("terengganu")
+              ),
+      ),
+      
+      tabItem("melaka",
+              fluidPage(
+                h2("Melaka"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("melakaDistrict"),
+                dataTableOutput("melaka")
+              ),
+      ),
+      
+      tabItem("pahang",
+              fluidPage(
+                h2("Pahang"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("pahangDistrict"),
+                dataTableOutput("pahang")
+              ),
+      ),
+      
+      tabItem("labuan",
+              fluidPage(
+                h2("Labuan"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("labuanDistrict"),
+                dataTableOutput("labuan")
+              ),
+      ),
+      
+      
+      tabItem("putrajaya",
+              fluidPage(
+                h2("Putrajaya"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("putrajayaDistrict"),
+                dataTableOutput("putrajaya")
+              ),
+      ),
+      
+      tabItem("negerisembilan",
+              fluidPage(
+                h2("Negeri Sembilan"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("nsembilanDistrict"),
+                dataTableOutput("nsembilan")
+              ),
+      ),
+      
+      tabItem("sabah",
+              fluidPage(
+                h2("Sabah"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("sabahDistrict"),
+                dataTableOutput("sabah")
+              ),
+      ),
+      
+      tabItem("Sarawak",
+              fluidPage(
+                h2("Sarawak"),
+                "updated",
+                em("April 5, 2021"),
+                plotlyOutput("sarawakDistrict"),
+                dataTableOutput("sarawak")
+              )
+      )
       
       
       
@@ -342,16 +593,173 @@ server <- function(input,output){
   #Johor
   
   output$johorDistrict <- renderPlotly({
-    klDist <- ggplot(data=johor_district , aes(x= `District`, y = `14 Day Total`))+
+    johorDist <- ggplot(data=johor_district , aes(x= `District`, y = `14 Day Total`))+
       geom_bar(stat ="identity")+
       theme_minimal()
     
-    klDist
+    johorDist
     
   })
   
-  output$johor <- renderDataTable(kualalumpur)
+  output$johor <- renderDataTable(johor)
   
+  #Perlis
+  
+  output$perlisDistrict <- renderPlotly({
+    perlisDist <- ggplot(data=perlis_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    perlisDist
+    
+  })
+  
+  output$perlis <- renderDataTable(perlis)
+  
+  #Penang
+  
+  output$penangDistrict <- renderPlotly({
+    penangDist <- ggplot(data=penang_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    penangDist
+    
+  })
+  
+  output$penang <- renderDataTable(penang)
+  
+  #Kedah
+  
+  output$kedahDistrict <- renderPlotly({
+    kedahDist <- ggplot(data=kedah_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    kedahDist
+    
+  })
+  
+  output$kedah <- renderDataTable(kedah)
+  
+  #Kelantan
+  
+  output$kelantanDistrict <- renderPlotly({
+    kelantanDist <- ggplot(data=kelantan_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    kelantanDist
+    
+  })
+  
+  output$kelantan <- renderDataTable(kelantan)
+  
+  #Terengganu
+  
+  output$terengganuDistrict <- renderPlotly({
+    terengganuDist <- ggplot(data=terengganu_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    terengganuDist
+    
+  })
+  
+  output$terengganu <- renderDataTable(terengganu)
+  
+  #Melaka
+  
+  output$melakaDistrict <- renderPlotly({
+    melakaDist <- ggplot(data=melaka_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    melakaDist
+    
+  })
+  
+  output$melaka <- renderDataTable(melaka)
+  
+  #Pahang
+  
+  output$pahangDistrict <- renderPlotly({
+    pahangDist <- ggplot(data=pahang_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    pahangDist
+    
+  })
+  
+  output$pahang <- renderDataTable(pahang)
+  
+  #Labuan
+  
+  output$labuanDistrict <- renderPlotly({
+    labuanDist <- ggplot(data=labuan_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    labuanDist
+    
+  })
+  
+  output$labuan <- renderDataTable(labuan)
+  
+  #Putrajaya
+  
+  output$putrajayaDistrict <- renderPlotly({
+    putrajayaDist <- ggplot(data=putrajaya_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    putrajayaDist
+    
+  })
+  
+  output$putrajaya <- renderDataTable(putrajaya)
+  
+  #Negeri Sembilan
+  
+  output$nsembilanDistrict <- renderPlotly({
+    nsembilanDist <- ggplot(data=nsembilan_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme_minimal()
+    
+    nsembilanDist
+    
+  })
+  
+  output$nsembilan <- renderDataTable(nsembilan)
+  
+  #Sabah
+  
+  output$sabahDistrict <- renderPlotly({
+    sabahDist <- ggplot(data=sabah_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))+
+      theme_minimal()
+    
+    sabahDist
+    
+  })
+  
+  output$sabah <- renderDataTable(sabah)
+  
+  #Sarawak
+  
+  output$sarawakDistrict <- renderPlotly({
+    sarawakDist <- ggplot(data=sarawak_district , aes(x= `District`, y = `14 Day Total`))+
+      geom_bar(stat ="identity")+
+      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))+
+      theme_minimal()
+    
+    sarawakDist
+    
+  })
+  
+  output$sarawak <- renderDataTable(sarawak)
   
 }
 
