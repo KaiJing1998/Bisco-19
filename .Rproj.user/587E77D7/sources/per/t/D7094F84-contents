@@ -6,11 +6,11 @@ library(dplyr)
 library(ggplot2)
 library(reshape2)
 library(plotly)
-library(maps)
+#library(maps)
 
-Malaysia <- map_data("world") %>% filter(region == "Malaysia")
+#Malaysia <- map_data("world") %>% filter(region == "Malaysia")
 
-data <- world.cities %>% filter(country.etc == "Malaysia")
+#data <- world.cities %>% filter(country.etc == "Malaysia")
 
 
 #Connect to database
@@ -173,8 +173,8 @@ sarawak = fetch (rs32, n= -1)
 #View(johor)
 #View(perlis_district)
 #View(perlis)
-#View(pinang_district)
-#View(pinang)
+#View(penang_district)
+#View(penang)
 #View(kedah_district)
 #View(kedah)
 #View(kelantan_district)
