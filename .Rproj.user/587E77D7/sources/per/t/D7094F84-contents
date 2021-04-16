@@ -1,5 +1,6 @@
 library(shiny)
 library(shinydashboard)
+library(shinydashboardPlus)
 library(DT)
 library(RMySQL)
 library(dplyr)
@@ -158,10 +159,6 @@ rs32 = dbSendQuery(mydb, "SELECT * FROM SARAWAK")
 sarawak = fetch (rs32, n= -1)
 
 
-
-
-
-
 #View(state_cases_table)
 #View(datatable)
 #View(daily_state_cases_table)
@@ -202,6 +199,10 @@ ui <- dashboardPage(
   dashboardHeader(title = "Covid-19 Malaysia Dashboard",
                   titleWidth = 300
                   ),
+  footer = dashboardFooter(
+    left = "Copyright 2021",
+   
+  ),
   
   dashboardSidebar(
     width = 300,
@@ -231,10 +232,10 @@ ui <- dashboardPage(
   dashboardBody(
     fluidRow(
       # A static value Box
-      valueBox("1,070","New Cases", color = "red", width = 3, icon = icon("arrow-alt-circle-up")),
-      valueBox("7","New Deaths", color = "green",width = 3, icon = icon("arrow-alt-circle-up")),
-      valueBox("1,294","New Recovered", color = "blue",width = 3, icon = icon("arrow-alt-circle-up")),
-      valueBox("14,278","Active Cases", color = "maroon", width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("1,767","New Cases", color = "red", width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("12","New Deaths", color = "olive",width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("1,290","New Recovered", color = "light-blue",width = 3, icon = icon("arrow-alt-circle-up")),
+      valueBox("16,300","Active Cases", color = "navy", width = 3, icon = icon("arrow-alt-circle-up")),
     ),
     
     tabItems(
@@ -246,6 +247,7 @@ ui <- dashboardPage(
                             type = "tab"
       
               ),
+              br(),
               
               tabsetPanel(
                             tabPanel("Daily Deaths",plotlyOutput("lineChart5")),
@@ -253,20 +255,17 @@ ui <- dashboardPage(
                             type = "tab"
       
               ),
-                         
-    
-              
-              
-      #tabItem("home",
-       #       plotlyOutput("linestate")),
+                    
+              br(),     
       
       fluidRow(
         tabItem("home",
-                box(title = "State Confirmed Cases", status = "primary", solidHearder = TRUE,
+                box(title = "State Confirmed Cases",background = "black", solidHearder = TRUE,
                     collapsible = TRUE,
                     plotlyOutput("stateBarGraph"))),
+            
         
-                box(title = "State Daily Cases", status = "primary", solidHeader = TRUE,
+                box(title = "State Daily Cases",background = "blue" , solidHeader = TRUE,
                     collapsible = TRUE,
                     plotlyOutput("linestate"))
       ),
@@ -279,7 +278,8 @@ ui <- dashboardPage(
               fluidPage(
                 h2("State in Malaysia"),
                   "updated",
-                  em("April 5, 2021"),
+                  em("April 13, 2021"),
+                br(),
                 dataTableOutput("state_cases")
               )
       ),
@@ -288,8 +288,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Kuala Lumpur"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("kualaLumpurDistrict"),
+                br(),
                 dataTableOutput("kualaLumpur")
               ),
       ),
@@ -298,8 +300,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Selangor"),
                    "updated",
-                   em("April 5, 2021"),
+                   em("April 13, 2021"),
+                  br(),
                   plotlyOutput("selangorDistrict"),
+                  br(),
                   dataTableOutput("selangor")
               ),
       ),
@@ -308,8 +312,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Johor"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("johorDistrict"),
+                br(),
                 dataTableOutput("johor")
               ),
       ),
@@ -318,8 +324,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Perlis"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("perlisDistrict"),
+                br(),
                 dataTableOutput("perlis")
               ),
       ),
@@ -328,8 +336,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Penang"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("penangDistrict"),
+                br(),
                 dataTableOutput("penang")
               ),
       ),
@@ -338,8 +348,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Kedah"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("kedahDistrict"),
+                br(),
                 dataTableOutput("kedah")
               ),
       ),
@@ -348,8 +360,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Kelantan"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("kelantanDistrict"),
+                br(),
                 dataTableOutput("kelantan")
               ),
       ),
@@ -358,8 +372,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Terengganu"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("terengganuDistrict"),
+                br(),
                 dataTableOutput("terengganu")
               ),
       ),
@@ -368,8 +384,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Melaka"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("melakaDistrict"),
+                br(),
                 dataTableOutput("melaka")
               ),
       ),
@@ -378,8 +396,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Pahang"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("pahangDistrict"),
+                br(),
                 dataTableOutput("pahang")
               ),
       ),
@@ -388,8 +408,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Labuan"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("labuanDistrict"),
+                br(),
                 dataTableOutput("labuan")
               ),
       ),
@@ -399,8 +421,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Putrajaya"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("putrajayaDistrict"),
+                br(),
                 dataTableOutput("putrajaya")
               ),
       ),
@@ -409,8 +433,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Negeri Sembilan"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13 2021"),
+                br(),
                 plotlyOutput("nsembilanDistrict"),
+                br(),
                 dataTableOutput("nsembilan")
               ),
       ),
@@ -419,8 +445,10 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Sabah"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("sabahDistrict"),
+                br(),
                 dataTableOutput("sabah")
               ),
       ),
@@ -429,9 +457,40 @@ ui <- dashboardPage(
               fluidPage(
                 h2("Sarawak"),
                 "updated",
-                em("April 5, 2021"),
+                em("April 13, 2021"),
+                br(),
                 plotlyOutput("sarawakDistrict"),
+                br(),
                 dataTableOutput("sarawak")
+              ),
+      ),
+      
+      tabItem("symptoms",
+              fluidPage(
+                h2("Symptoms of Covid-19", align = "center"),
+                h3("COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization."),
+                
+                code("Most common symptoms:"),
+                h4(" - Fever"),
+                h4(" - Dry cough"),
+                h4(" - Tiredness"),
+                br(),
+                code("Less common symptoms:"),
+                h4(" - Aches and pains"),
+                h4(" - Sore throat"),
+                h4(" - Diarrhoea"),
+                h4(" - Conjunctivitis"),
+                h4(" - Headache"),
+                h4(" - Loss of taste or smell"),
+                h4(" - A rash on skin, or discolouration on fingers or toes"),
+                br(),
+                code("Serious symptoms:"),
+                h4(" - Difficulty breathing or shortness or breath"),
+                h4(" - Chest pain or pressure"),
+                h4(" - Loss of speech or movement"),
+                br(),
+                em("Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility. People with mild symptoms who are otherwise healthy should manage their symptoms at home. On average it takes 5 - 6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.")
+                
               )
       )
       
@@ -439,6 +498,7 @@ ui <- dashboardPage(
       
     )
   )
+  
 )
 
 
@@ -537,6 +597,7 @@ server <- function(input,output){
       geom_line(data = daily_state_cases_table,aes(x = `Date`,y = `WP_Kuala_Lumpur`, group = 1), color="palevioletred")+
       geom_line(data = daily_state_cases_table,aes(x = `Date`,y = `WP_Putrajaya`, group = 1), color="linen") +
       geom_line(data = daily_state_cases_table,aes(x = `Date`,y = `WP_Labuan`, group = 1), color="rosybrown4") +
+      geom_point()+
       theme_classic()+
       xlab("Day")+
       ylab("State")+
@@ -550,9 +611,9 @@ server <- function(input,output){
   #State Bar Graph (Total Cases)
   output$stateBarGraph <- renderPlotly({
     stateBar <- ggplot(data = state_cases_table, aes(x= `State`, y = `Confirmed`)) +
-      geom_bar(stat = "identity", color = "salmon3", fill="ivory" )+
+      geom_bar(stat = "identity", color = "bisque3", fill="blue4" )+
       theme_minimal()+
-      xlab("State") +
+      #xlab("State") +
       ylab("Total Confirmed Cases")
     
     stateBar
@@ -568,7 +629,7 @@ server <- function(input,output){
   # Selangor
   output$selangorDistrict <- renderPlotly({
     selangorDist <- ggplot(data= selangor_district, aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "darkred")+
       theme_minimal()
     
     selangorDist
@@ -581,7 +642,7 @@ server <- function(input,output){
   # Kuala Lumpur 
   output$kualaLumpurDistrict <- renderPlotly({
     klDist <- ggplot(data=kualalumpur_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "darksalmon")+
       theme_minimal()
     
     klDist
@@ -594,7 +655,7 @@ server <- function(input,output){
   
   output$johorDistrict <- renderPlotly({
     johorDist <- ggplot(data=johor_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "darkslategray4")+
       theme_minimal()
     
     johorDist
@@ -607,7 +668,7 @@ server <- function(input,output){
   
   output$perlisDistrict <- renderPlotly({
     perlisDist <- ggplot(data=perlis_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "deepskyblue")+
       theme_minimal()
     
     perlisDist
@@ -620,7 +681,7 @@ server <- function(input,output){
   
   output$penangDistrict <- renderPlotly({
     penangDist <- ggplot(data=penang_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "cadetblue")+
       theme_minimal()
     
     penangDist
@@ -633,7 +694,7 @@ server <- function(input,output){
   
   output$kedahDistrict <- renderPlotly({
     kedahDist <- ggplot(data=kedah_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "antiquewhite3")+
       theme_minimal()
     
     kedahDist
@@ -646,7 +707,7 @@ server <- function(input,output){
   
   output$kelantanDistrict <- renderPlotly({
     kelantanDist <- ggplot(data=kelantan_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "coral")+
       theme_minimal()
     
     kelantanDist
@@ -659,7 +720,7 @@ server <- function(input,output){
   
   output$terengganuDistrict <- renderPlotly({
     terengganuDist <- ggplot(data=terengganu_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "azure3")+
       theme_minimal()
     
     terengganuDist
@@ -672,7 +733,7 @@ server <- function(input,output){
   
   output$melakaDistrict <- renderPlotly({
     melakaDist <- ggplot(data=melaka_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "darkseagreen2")+
       theme_minimal()
     
     melakaDist
@@ -685,7 +746,7 @@ server <- function(input,output){
   
   output$pahangDistrict <- renderPlotly({
     pahangDist <- ggplot(data=pahang_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "lightcoral")+
       theme_minimal()
     
     pahangDist
@@ -698,7 +759,7 @@ server <- function(input,output){
   
   output$labuanDistrict <- renderPlotly({
     labuanDist <- ggplot(data=labuan_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "lightcyan3")+
       theme_minimal()
     
     labuanDist
@@ -711,7 +772,7 @@ server <- function(input,output){
   
   output$putrajayaDistrict <- renderPlotly({
     putrajayaDist <- ggplot(data=putrajaya_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "mediumpurple4")+
       theme_minimal()
     
     putrajayaDist
@@ -724,7 +785,7 @@ server <- function(input,output){
   
   output$nsembilanDistrict <- renderPlotly({
     nsembilanDist <- ggplot(data=nsembilan_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat ="identity", color = "lightslategrey")+
       theme_minimal()
     
     nsembilanDist
@@ -737,8 +798,8 @@ server <- function(input,output){
   
   output$sabahDistrict <- renderPlotly({
     sabahDist <- ggplot(data=sabah_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
-      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))+
+      geom_bar(stat ="identity", color = "navyblue")+
+      theme(axis.text.x=element_text(angle=90))+
       theme_minimal()
     
     sabahDist
@@ -751,7 +812,7 @@ server <- function(input,output){
   
   output$sarawakDistrict <- renderPlotly({
     sarawakDist <- ggplot(data=sarawak_district , aes(x= `District`, y = `14 Day Total`))+
-      geom_bar(stat ="identity")+
+      geom_bar(stat = "identity", color = "blue")+
       theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))+
       theme_minimal()
     
