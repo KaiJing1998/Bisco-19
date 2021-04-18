@@ -470,24 +470,44 @@ ui <- dashboardPage(
                 h2("Symptoms of Covid-19", align = "center"),
                 h3("COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization."),
                 
-                code("Most common symptoms:"),
-                h4(" - Fever"),
-                h4(" - Dry cough"),
-                h4(" - Tiredness"),
+                wellPanel(
+                  fluidRow(
+                    h3("Most common symptoms:"),
+                    h4(" - Fever"),
+                    h4("- Dry cough"),
+                    h4("- Tiredness")
+                  ),
+                ),
+                
                 br(),
-                code("Less common symptoms:"),
-                h4(" - Aches and pains"),
-                h4(" - Sore throat"),
-                h4(" - Diarrhoea"),
-                h4(" - Conjunctivitis"),
-                h4(" - Headache"),
-                h4(" - Loss of taste or smell"),
-                h4(" - A rash on skin, or discolouration on fingers or toes"),
+                
+                wellPanel(
+                  fluidRow(
+                    h3("Less common symptoms:"),
+                    h4(" - Aches and pains"),
+                    h4(" - Sore throat"),
+                    h4(" - Diarrhoea"),
+                    h4(" - Conjunctivitis"),
+                    h4(" - Headache"),
+                    h4(" - Loss of taste or smell"),
+                    h4(" - A rash on skin, or discolouration on fingers or toes")
+                    
+                  ),
+                ),
+                
                 br(),
-                code("Serious symptoms:"),
-                h4(" - Difficulty breathing or shortness or breath"),
-                h4(" - Chest pain or pressure"),
-                h4(" - Loss of speech or movement"),
+                
+                wellPanel(
+                  fluidRow(
+                    h3("Serious symptoms:"),
+                    h4(" - Difficulty breathing or shortness or breath"),
+                    h4(" - Chest pain or pressure"),
+                    h4(" - Loss of speech or movement")
+                    
+                  ),
+                  
+                ),
+                
                 br(),
                 em("Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility. People with mild symptoms who are otherwise healthy should manage their symptoms at home. On average it takes 5 - 6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.")
                 
